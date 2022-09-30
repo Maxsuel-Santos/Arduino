@@ -3,7 +3,7 @@
 #include <ThreeWire.h>  
 #include <RtcDS1302.h>
 
-ThreeWire myWire(6,7,8); // 6 -> DAT (SDA) | 7 -> CLK SCL() | 8 -> RST (RESET)
+ThreeWire myWire(6,7,8); // 6 -> DAT (SDA) | 7 -> CLK (SCL) | 8 -> RST (RESET)
 RtcDS1302<ThreeWire> Rtc(myWire);
 
 // ===== Configurações =====
