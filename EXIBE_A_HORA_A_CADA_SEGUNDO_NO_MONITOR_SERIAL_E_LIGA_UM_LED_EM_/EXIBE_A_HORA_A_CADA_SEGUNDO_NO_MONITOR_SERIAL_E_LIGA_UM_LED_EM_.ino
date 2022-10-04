@@ -56,7 +56,8 @@ void setup () {
 
   // SETUP LCD
 
-  
+  lcd.begin(16,2);
+  lcd.clear();
 }
 
 // ===== Loop =====
