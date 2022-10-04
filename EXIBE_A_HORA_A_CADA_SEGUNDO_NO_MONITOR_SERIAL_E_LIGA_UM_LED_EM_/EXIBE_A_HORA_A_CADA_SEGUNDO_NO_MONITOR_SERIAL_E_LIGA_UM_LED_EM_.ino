@@ -2,13 +2,19 @@
 
 #include <ThreeWire.h>
 #include <RtcDS1302.h>
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(7,6,5,4,3,2);
 
 ThreeWire myWire(9, 10, 11); // 6 -> DAT (SDA) | 7 -> CLK (SCL) | 8 -> RST (RESET)
 RtcDS1302<ThreeWire> Rtc(myWire);
 
 // ===== Configurações =====
 void setup () {
+  // SETUP LED DIFUSO
   pinMode(8, OUTPUT); // LED
+
+  // SETUP RTC DS1302
 
   Serial.begin(57600);
   Serial.print("compiled: ");
@@ -47,6 +53,10 @@ void setup () {
     Serial.println("O RTC é mais recente que o tempo de compilação. (isso é esperado).");
   else
     Serial.println("RTC é o mesmo que tempo de compilação! (não esperado, mas está tudo bem).");
+
+  // SETUP LCD
+
+  
 }
 
 // ===== Loop =====
