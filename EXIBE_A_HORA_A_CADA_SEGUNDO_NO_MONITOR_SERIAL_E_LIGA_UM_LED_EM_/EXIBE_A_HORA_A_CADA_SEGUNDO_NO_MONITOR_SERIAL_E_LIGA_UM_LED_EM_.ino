@@ -3,12 +3,12 @@
 #include <ThreeWire.h>
 #include <RtcDS1302.h>
 
-ThreeWire myWire(6, 7, 8); // 6 -> DAT (SDA) | 7 -> CLK (SCL) | 8 -> RST (RESET)
+ThreeWire myWire(9, 10, 11); // 6 -> DAT (SDA) | 7 -> CLK (SCL) | 8 -> RST (RESET)
 RtcDS1302<ThreeWire> Rtc(myWire);
 
 // ===== Configurações =====
 void setup () {
-  pinMode(3, OUTPUT); // LED
+  pinMode(8, OUTPUT); // LED
 
   Serial.begin(57600);
   Serial.print("compiled: ");
@@ -76,34 +76,22 @@ void printDateTime(const RtcDateTime& dt) {
   if (dt.Hour() == 9 && dt.Minute() < 1) {
     Serial.println(); // Pular linha
     Serial.println("LED LIGADO!"); // Imprime no Monitor Serial p/ Ligar o Led
-    digitalWrite(3, HIGH); // Liga o Led
+    digitalWrite(8, HIGH); // Liga o Led
   } 
   // LIGAR PELA 2ª VEZ => 14:00 ÀS 14:01
   else if (dt.Hour() == 15 && dt.Minute() < 1) {
     Serial.println(); // Pular linha
     Serial.println("LED LIGADO!"); // Imprime no Monitor Serial p/ Ligar o Led
-    digitalWrite(3, HIGH); // Liga o Led
+    digitalWrite(8, HIGH); // Liga o Led
   }
   // LIGAR PELA 3ª VEZ => 21:00 ÀS 21:01
   else if (dt.Hour() == 21 && dt.Minute() < 1) {
     Serial.println(); // Pular linha
     Serial.println("LED LIGADO!"); // Imprime no Monitor Serial p/ Ligar o Led
-    digitalWrite(3, HIGH); // Liga o Led
+    digitalWrite(8, HIGH); // Liga o Led
   } 
   else {
-    digitalWrite(3, LOW);
+    digitalWrite(8, LOW);
   }
 
-  /*
-    // LIGAR PELA 3ª VEZ => 17:30 ÀS 17:35
-    int hora = 17, minutoInicio = 30, minutoFinal = 35;
-    if(dt.Hour() == hora && dt.Minute() >= minutoInicio) {
-      Serial.println(); // Pular linha
-      Serial.println("LED LIGADO!"); // Imprime no Monitor Serial p/ Ligar o Led
-      digitalWrite(3, HIGH); // Liga o Led
-      if(dt.Hour() == hora && dt.Minute() <= minutoFinal){
-        digitalWrite(3, LOW);
-      }
-    }
-  */
 }
