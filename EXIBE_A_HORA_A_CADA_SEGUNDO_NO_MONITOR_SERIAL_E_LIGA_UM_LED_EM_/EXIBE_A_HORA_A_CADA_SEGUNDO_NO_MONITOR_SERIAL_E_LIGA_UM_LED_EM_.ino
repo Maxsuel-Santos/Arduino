@@ -72,30 +72,25 @@ void printDateTime(const RtcDateTime& dt) {
   Serial.println(); // Pular linha
   Serial.print(datestring);
 
-  // LIGAR PELA 1ª VEZ => 9:00 ÀS 9:10
-  if (dt.Hour() == 9 && dt.Minute() <= 10) {
+  // LIGAR PELA 1ª VEZ => 9:00 ÀS 9:01
+  if (dt.Hour() == 9 && dt.Minute() < 1) {
     Serial.println(); // Pular linha
     Serial.println("LED LIGADO!"); // Imprime no Monitor Serial p/ Ligar o Led
     digitalWrite(3, HIGH); // Liga o Led
-  } else {
-    digitalWrite(3, LOW);
+  } 
+  // LIGAR PELA 2ª VEZ => 14:00 ÀS 14:01
+  else if (dt.Hour() == 15 && dt.Minute() < 1) {
+    Serial.println(); // Pular linha
+    Serial.println("LED LIGADO!"); // Imprime no Monitor Serial p/ Ligar o Led
+    digitalWrite(3, HIGH); // Liga o Led
   }
-
-  // LIGAR PELA 2ª VEZ => 14:00 ÀS 14:10
-  if (dt.Hour() == 14 && dt.Minute() <= 10) {
+  // LIGAR PELA 3ª VEZ => 21:00 ÀS 21:01
+  else if (dt.Hour() == 21 && dt.Minute() < 1) {
     Serial.println(); // Pular linha
     Serial.println("LED LIGADO!"); // Imprime no Monitor Serial p/ Ligar o Led
     digitalWrite(3, HIGH); // Liga o Led
-  } else {
-    digitalWrite(3, LOW);
-  }
-
-  // LIGAR PELA 3ª VEZ => 21:00 ÀS 21:10
-  if (dt.Hour() == 21 && dt.Minute() < 10) {
-    Serial.println(); // Pular linha
-    Serial.println("LED LIGADO!"); // Imprime no Monitor Serial p/ Ligar o Led
-    digitalWrite(3, HIGH); // Liga o Led
-  } else {
+  } 
+  else {
     digitalWrite(3, LOW);
   }
 
