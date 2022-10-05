@@ -69,12 +69,17 @@ void loop () {
     Serial.println("RTC perdeu a confiança no DateTime!.");
   }
   delay(1000);
+  
 }
 
 #define countof(a) (sizeof(a) / sizeof(a[0]))
 
 void printDateTime(const RtcDateTime& dt) {
+  char lcdDate[20];
+  char lcdHour[20];
+  
   char datestring[20];
+  
   snprintf_P(datestring,
              countof(datestring),
              PSTR("%02u/%02u/%04u %02u:%02u:%02u"),
@@ -96,7 +101,7 @@ void printDateTime(const RtcDateTime& dt) {
     digitalWrite(8, HIGH); // Liga o Led
   }
   // LIGAR PELA 3ª VEZ => 21:00 ÀS 21:01
-  else if (dt.Hour() == 21 && dt.Minute() < 1) {
+  else if (dt.Hour() == 21 && dt.Minute() < 10) {
     Serial.println(); // Pular linha
     Serial.println("LED LIGADO!"); // Imprime no Monitor Serial p/ Ligar o Led
     digitalWrite(8, HIGH); // Liga o Led
@@ -104,5 +109,23 @@ void printDateTime(const RtcDateTime& dt) {
   else {
     digitalWrite(8, LOW);
   }
+
+  // EXIBE A HORA NO LCD
+  
+  // Data
+  snprintf_P(lcdDate,
+             countof(lcdDate),
+             PSTR("%02u/%02u/%04u"),
+             dt.Month(), dt.Day(), dt.Year());
+  lcd.setCursor(0,0);
+  lcd.print(lcdDate);
+  
+  // Hora
+  lcd.setCursor(1,4);
+  snprintf_P(lcdHour,
+             countof(lcdHour),
+             PSTR("%02u:%02u:%02u"),
+             dt.Hour(), dt.Minute(), dt.Second());
+  lcd.print(lcdHour);
 
 }
