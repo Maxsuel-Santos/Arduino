@@ -116,7 +116,7 @@ void printDateTime(const RtcDateTime& dt) {
   snprintf_P(lcdDate,
              countof(lcdDate),
              PSTR("%02u/%02u/%04u"),
-             dt.Month(), dt.Day(), dt.Year());
+             dt.Day(), dt.Month(), dt.Year());
   lcd.setCursor(0,0);
   lcd.print(lcdDate);
   
