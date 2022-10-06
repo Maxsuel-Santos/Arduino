@@ -72,6 +72,8 @@ void loop () {
   
 }
 
+// FUNÇÃO
+
 #define countof(a) (sizeof(a) / sizeof(a[0]))
 
 void printDateTime(const RtcDateTime& dt) {
