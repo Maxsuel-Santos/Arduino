@@ -62,7 +62,8 @@ void setup () {
 void loop () {
   RtcDateTime now = Rtc.GetDateTime();
   printDateTime(now);
-  
+
+  // Verifica se a data e a hora são válidos 
   if (!now.IsValid()) {
     Serial.println("RTC perdeu a confiança no DateTime!.");
   }
