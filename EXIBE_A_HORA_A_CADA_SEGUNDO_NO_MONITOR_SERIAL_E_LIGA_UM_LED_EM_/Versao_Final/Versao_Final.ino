@@ -25,8 +25,8 @@ void setup () {
   printDateTime(compiled);
   Serial.println();
 
+  // Verifica se a data e a hora são válidos 
   if (!Rtc.IsDateTimeValid()) {
-    // Causas comuns: 1) primeira vez que você executou e o dispositivo ainda não estava funcionando 2) a bateria do dispositivo está fraca ou até faltando
     Serial.println("RTC perdeu a confiança no DateTime!");
     Rtc.SetDateTime(compiled);
   }
