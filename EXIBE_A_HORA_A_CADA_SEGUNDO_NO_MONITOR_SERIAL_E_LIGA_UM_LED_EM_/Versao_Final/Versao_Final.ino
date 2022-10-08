@@ -95,7 +95,7 @@ void printDateTime(const RtcDateTime& dt) {
     digitalWrite(8, HIGH); // Liga o Led
   } 
   // LIGAR PELA 2ª VEZ => 16:00 ÀS 18:00
-  else if (dt.Hour() == 16 && dt.Hour() < 18) {
+  else if (dt.Hour() == 16 || dt.Hour() == 17) {
     Serial.println(); // Pular linha
     Serial.println("LED LIGADO!"); // Imprime no Monitor Serial p/ Ligar o Led
     digitalWrite(8, HIGH); // Liga o Led
