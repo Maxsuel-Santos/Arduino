@@ -15,7 +15,6 @@ void setup () {
   pinMode(8, OUTPUT); // LED
 
   // SETUP RTC DS1302
-
   Serial.begin(57600);
   Serial.print("compiled: ");
   Serial.print(__DATE__);
