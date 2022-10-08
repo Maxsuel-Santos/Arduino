@@ -4,7 +4,7 @@
 #include <RtcDS1302.h>
 #include <LiquidCrystal.h>
 
-LiquidCrystal lcd(7,6,5,4,3,2);
+LiquidCrystal lcd(7,6,5,4,3,2); // Portas do LCD no Arduino
 
 ThreeWire myWire(9, 10, 11); // 6 -> DAT (SDA) | 7 -> CLK (SCL) | 8 -> RST (RESET)
 RtcDS1302<ThreeWire> Rtc(myWire);
