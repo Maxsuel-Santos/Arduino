@@ -123,11 +123,11 @@ void printDateTime(const RtcDateTime& dt) {
   lcd.print(lcdDate);
   
   // Hora
-  lcd.setCursor(1,4);
   snprintf_P(lcdHour,
              countof(lcdHour),
              PSTR("%02u:%02u:%02u"),
              dt.Hour(), dt.Minute(), dt.Second());
+  lcd.setCursor(1,4);
   lcd.print(lcdHour);
 
 }
