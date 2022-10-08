@@ -64,7 +64,6 @@ void loop () {
   printDateTime(now);
   
   if (!now.IsValid()) {
-    // Causas comuns: 1) a bateria do dispositivo está fraca ou até mesmo ausente e a linha de alimentação foi desconectada
     Serial.println("RTC perdeu a confiança no DateTime!.");
   }
   delay(1000);
