@@ -107,7 +107,6 @@ void printDateTime(const RtcDateTime& dt) {
   }
 
   // EXIBE A HORA NO LCD
-  
   // Data
   snprintf_P(lcdDate,
              countof(lcdDate),
