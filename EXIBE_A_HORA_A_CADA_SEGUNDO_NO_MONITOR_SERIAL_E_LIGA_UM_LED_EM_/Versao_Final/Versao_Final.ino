@@ -89,7 +89,7 @@ void printDateTime(const RtcDateTime& dt) {
   Serial.print(datestring);
 
   // LIGAR PELA 1ª VEZ => 6:00 ÀS 7:00
-  if (dt.Hour() == 6 || dt.Hour() == 7) {
+  if (dt.Hour() == 6) {
     Serial.println(); // Pular linha
     Serial.println("LED LIGADO!"); // Imprime no Monitor Serial p/ Ligar o Led
     digitalWrite(8, HIGH); // Liga o Led
