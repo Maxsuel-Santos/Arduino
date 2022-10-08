@@ -18,7 +18,7 @@ void setup () {
   Serial.begin(57600);
   Serial.print("compiled: ");
   Serial.print(__DATE__); // Monitor Serial => Data
-  Serial.println(__TIME__);
+  Serial.println(__TIME__); // Monitor Serial => Hora
 
   Rtc.Begin();
   RtcDateTime compiled = RtcDateTime(__DATE__, __TIME__);
