@@ -74,7 +74,6 @@ void loop () {
 }
 
 // FUNÇÃO
-
 #define countof(a) (sizeof(a) / sizeof(a[0]))
 
 void printDateTime(const RtcDateTime& dt) {
@@ -111,7 +110,7 @@ void printDateTime(const RtcDateTime& dt) {
   // Data
   snprintf_P(lcdDate,
              countof(lcdDate),
-             PSTR("%02u/%02u/%04u"),
+             PSTR("Data: %02u/%02u/%04u"),
              dt.Day(), dt.Month(), dt.Year());
   lcd.setCursor(0,0);
   lcd.print(lcdDate);
@@ -119,7 +118,7 @@ void printDateTime(const RtcDateTime& dt) {
   // Hora
   snprintf_P(lcdHour,
              countof(lcdHour),
-             PSTR("%02u:%02u:%02u"),
+             PSTR("Hora: %02u:%02u:%02u"),
              dt.Hour(), dt.Minute(), dt.Second());
   lcd.setCursor(1,4);
   lcd.print(lcdHour);
