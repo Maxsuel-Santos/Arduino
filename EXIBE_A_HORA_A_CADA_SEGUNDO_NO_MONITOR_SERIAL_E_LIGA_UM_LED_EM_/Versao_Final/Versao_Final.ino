@@ -90,26 +90,20 @@ void printDateTime(const RtcDateTime& dt) {
   Serial.println(); // Pular linha
   Serial.print(datestring);
 
-  // LIGAR PELA 1ª VEZ => 9:00 ÀS 9:01
-  if (dt.Hour() == 9 && dt.Minute() < 1) {
+  // LIGAR PELA 1ª VEZ => 6:00 ÀS 7:00
+  if (dt.Hour() == 6 && dt.Hour() < 7) {
     Serial.println(); // Pular linha
     Serial.println("LED LIGADO!"); // Imprime no Monitor Serial p/ Ligar o Led
     digitalWrite(8, HIGH); // Liga o Led
   } 
-  // LIGAR PELA 2ª VEZ => 14:00 ÀS 14:01
-  else if (dt.Hour() == 15 && dt.Minute() < 1) {
+  // LIGAR PELA 2ª VEZ => 16:00 ÀS 18:00
+  else if (dt.Hour() == 16 && dt.Hour() < 18) {
     Serial.println(); // Pular linha
     Serial.println("LED LIGADO!"); // Imprime no Monitor Serial p/ Ligar o Led
     digitalWrite(8, HIGH); // Liga o Led
   }
-  // LIGAR PELA 3ª VEZ => 21:00 ÀS 21:01
-  else if (dt.Hour() == 21 && dt.Minute() < 1) {
-    Serial.println(); // Pular linha
-    Serial.println("LED LIGADO!"); // Imprime no Monitor Serial p/ Ligar o Led
-    digitalWrite(8, HIGH); // Liga o Led
-  } 
   else {
-    digitalWrite(8, LOW);
+    digitalWrite(8, LOW); // Led desligado
   }
 
   // EXIBE A HORA NO LCD
