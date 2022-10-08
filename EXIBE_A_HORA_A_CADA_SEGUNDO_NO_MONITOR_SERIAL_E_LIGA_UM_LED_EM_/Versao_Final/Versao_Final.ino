@@ -6,7 +6,7 @@
 
 LiquidCrystal lcd(7,6,5,4,3,2); // Portas do LCD no Arduino
 
-ThreeWire myWire(9, 10, 11); // 6 -> DAT (SDA) | 7 -> CLK (SCL) | 8 -> RST (RESET)
+ThreeWire myWire(9, 10, 11); // 6 -> DAT (SDA) | 7 -> CLK (SCL) | 8 -> RST (RESET) => Portas do RTC no Arduino
 RtcDS1302<ThreeWire> Rtc(myWire);
 
 // ===== Configurações =====
