@@ -71,7 +71,7 @@ void loop () {
   
 }
 
-// FUNÇÃO
+// FUNÇÃO QUE EXIBE A DATA NO MONITOR SERIAL E NO DISPLAY LCD E LIGA O LED DURANTE OS HORÁRIOS PROGRAMADOS
 #define countof(a) (sizeof(a) / sizeof(a[0]))
 
 void printDateTime(const RtcDateTime& dt) {
