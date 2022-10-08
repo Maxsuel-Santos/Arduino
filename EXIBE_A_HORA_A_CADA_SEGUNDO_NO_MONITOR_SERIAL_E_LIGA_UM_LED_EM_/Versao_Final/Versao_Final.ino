@@ -17,7 +17,7 @@ void setup () {
   // SETUP RTC DS1302
   Serial.begin(57600);
   Serial.print("compiled: ");
-  Serial.print(__DATE__);
+  Serial.print(__DATE__); // Monitor Serial => Data
   Serial.println(__TIME__);
 
   Rtc.Begin();
