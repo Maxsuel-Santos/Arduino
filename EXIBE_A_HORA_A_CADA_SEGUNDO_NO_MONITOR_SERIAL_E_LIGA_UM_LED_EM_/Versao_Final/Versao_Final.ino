@@ -54,7 +54,6 @@ void setup () {
     Serial.println("RTC é o mesmo que tempo de compilação! (não esperado, mas está tudo bem).");
 
   // SETUP LCD
-
   lcd.begin(16,2);
   lcd.clear();
 }
